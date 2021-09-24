@@ -26,4 +26,9 @@ public class PersonController {
         return personService.createPerson(person);
     }
 
+    @GetMapping
+    public String testAPI(){
+        return "API ok";
+    }
+
 }
