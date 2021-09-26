@@ -17,13 +17,6 @@ import java.util.List;
 @NoArgsConstructor
 public class Person {
 
-/*    Person person;
-
-    //copy constructor
-    public Person (Person person){
-        this.person = person;
-    }*/
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

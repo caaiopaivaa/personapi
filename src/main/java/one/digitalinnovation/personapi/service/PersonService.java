@@ -2,10 +2,13 @@ package one.digitalinnovation.personapi.service;
 
 
 import one.digitalinnovation.personapi.dto.request.PersonDTO;
+import one.digitalinnovation.personapi.dto.request.PhoneDTO;
 import one.digitalinnovation.personapi.dto.response.MessageResponseDTO;
 import one.digitalinnovation.personapi.entity.Person;
+import one.digitalinnovation.personapi.entity.Phone;
 import one.digitalinnovation.personapi.exception.PersonNotFoundException;
 import one.digitalinnovation.personapi.mapper.PersonMapper;
+import one.digitalinnovation.personapi.mapper.PhoneMapper;
 import one.digitalinnovation.personapi.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +22,7 @@ public class PersonService {
     private PersonRepository personRepository;
 
     private final PersonMapper personMapper = PersonMapper.INSTANCE;
+    private final PhoneMapper phoneMapper = PhoneMapper.INSTANCE;
 
     @Autowired
     public PersonService(PersonRepository personRepository) {
@@ -50,7 +54,6 @@ public class PersonService {
 
     public MessageResponseDTO update(Long id, PersonDTO personDTO) throws PersonNotFoundException {
         verifyIfExists(id);
-
         Person updatedPerson = savePerson(personDTO);
         return createMessageResponse(updatedPerson.getId(), "person updated. ID: ");
     }
@@ -70,5 +73,12 @@ public class PersonService {
                 .builder()
                 .message(message + id)
                 .build();
+    }
+
+    public PersonDTO addPhone(Long idPerson, PhoneDTO phoneDTO) throws PersonNotFoundException {
+        Phone phoneToAdd = phoneMapper.toModel(phoneDTO);
+        Person person = verifyIfExists(idPerson);
+        person.getPhones().add(phoneToAdd);
+        return personMapper.toDTO(personRepository.save(person));
     }
 }

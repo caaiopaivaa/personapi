@@ -5,10 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import one.digitalinnovation.personapi.enums.PhoneType;
-import org.hibernate.validator.constraints.br.CPF;
 
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
 
@@ -18,6 +16,7 @@ import javax.validation.constraints.NotEmpty;
 @NoArgsConstructor
 public class PhoneDTO {
 
+
     private Long id;
 
     @Enumerated(EnumType.STRING)
@@ -25,4 +24,5 @@ public class PhoneDTO {
 
     @NotEmpty
     private String number;
+
 }
