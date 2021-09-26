@@ -1,6 +1,6 @@
-#Person API
+<h1>Person API</h1>
 
-###API REST para gerenciamente de Pessoas
+<h3>API REST para gerenciamente de Pessoas</h3>
 
 Para executar o projeto no terminal, na pasta do projeto digite o seguinte comando:
 
@@ -19,7 +19,7 @@ Caso prefira, poderá visualizar a execução do projeto em nuvem, através do l
 https://personapi-restcrud.herokuapp.com/api/v1/people 
 ```
 
-##Foram utilizadas as seguintes tecnologias no desenvolvimento do projeto:
+<h3>Foram utilizadas as seguintes tecnologias no desenvolvimento do projeto:</h3>
 
 * Java
 * Spring
