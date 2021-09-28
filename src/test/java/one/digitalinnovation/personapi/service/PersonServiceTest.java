@@ -41,13 +41,10 @@ public class PersonServiceTest {
         Person expectedSavedPerson = personMapper.toModel(personDTOToSave);
         MessageResponseDTO expectedMessage = personService.createMessageResponse(personDTOToSave.getId(),
                 "person saved. ID: ");
-
         //when
         Mockito.when(personRepository.save(expectedSavedPerson)).thenReturn(expectedSavedPerson);
-
         //then
         MessageResponseDTO messageResponseDTO = personService.createPerson(personDTOToSave);
-
         assertThat(expectedMessage.getMessage(), is(equalTo(messageResponseDTO.getMessage())));
     }
 
