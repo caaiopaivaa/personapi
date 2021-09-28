@@ -39,8 +39,7 @@ public class PersonServiceTest {
         //given
         PersonDTO personDTOToSave = PersonDTOBuilder.builder().build().toPersonDTO();
         Person expectedSavedPerson = personMapper.toModel(personDTOToSave);
-        MessageResponseDTO expectedMessage = personService.createMessageResponse(personDTOToSave.getId(),
-                "person saved. ID: ");
+        MessageResponseDTO expectedMessage = new MessageResponseDTO("person saved. ID: "+ expectedSavedPerson.getId());
         //when
         Mockito.when(personRepository.save(expectedSavedPerson)).thenReturn(expectedSavedPerson);
         //then
