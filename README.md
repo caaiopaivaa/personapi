@@ -19,7 +19,7 @@ Caso prefira, poderá visualizar a execução do projeto em nuvem, através do l
 https://personapi-restcrud.herokuapp.com/api/v1/people 
 ```
 
-<h3>Foram utilizadas as seguintes tecnologias no desenvolvimento do projeto:</h3>
+<h3>Tecnologias utilizadas:</h3>
 
 * Java
 * Spring
@@ -30,4 +30,7 @@ https://personapi-restcrud.herokuapp.com/api/v1/people
 * lombok
 * MapStruct
 * Heroku
+* JUnit
+* Mockito
+* Hamcrest
 
