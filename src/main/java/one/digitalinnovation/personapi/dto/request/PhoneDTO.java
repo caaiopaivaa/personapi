@@ -16,7 +16,6 @@ import javax.validation.constraints.NotEmpty;
 @NoArgsConstructor
 public class PhoneDTO {
 
-
     private Long id;
 
     @Enumerated(EnumType.STRING)
