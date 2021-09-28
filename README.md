@@ -30,4 +30,7 @@ https://personapi-restcrud.herokuapp.com/api/v1/people
 * lombok
 * MapStruct
 * Heroku
+* JUnit
+* Mockito
+* Hamcrest
 
